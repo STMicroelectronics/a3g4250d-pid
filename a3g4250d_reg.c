@@ -1415,7 +1415,7 @@ int32_t a3g4250d_int_on_threshold_src_get(const stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t a3g4250d_int_x_treshold_set(const stmdev_ctx_t *ctx, uint16_t val)
+int32_t a3g4250d_int_x_threshold_set(const stmdev_ctx_t *ctx, uint16_t val)
 {
   a3g4250d_int1_tsh_xh_t int1_tsh_xh;
   a3g4250d_int1_tsh_xl_t int1_tsh_xl;
@@ -1455,7 +1455,7 @@ int32_t a3g4250d_int_x_treshold_set(const stmdev_ctx_t *ctx, uint16_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t a3g4250d_int_x_treshold_get(const stmdev_ctx_t *ctx, uint16_t *val)
+int32_t a3g4250d_int_x_threshold_get(const stmdev_ctx_t *ctx, uint16_t *val)
 {
   a3g4250d_int1_tsh_xh_t int1_tsh_xh;
   a3g4250d_int1_tsh_xl_t int1_tsh_xl;
@@ -1484,7 +1484,7 @@ int32_t a3g4250d_int_x_treshold_get(const stmdev_ctx_t *ctx, uint16_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t a3g4250d_int_y_treshold_set(const stmdev_ctx_t *ctx, uint16_t val)
+int32_t a3g4250d_int_y_threshold_set(const stmdev_ctx_t *ctx, uint16_t val)
 {
   a3g4250d_int1_tsh_yh_t int1_tsh_yh;
   a3g4250d_int1_tsh_yl_t int1_tsh_yl;
@@ -1524,7 +1524,7 @@ int32_t a3g4250d_int_y_treshold_set(const stmdev_ctx_t *ctx, uint16_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t a3g4250d_int_y_treshold_get(const stmdev_ctx_t *ctx, uint16_t *val)
+int32_t a3g4250d_int_y_threshold_get(const stmdev_ctx_t *ctx, uint16_t *val)
 {
   a3g4250d_int1_tsh_yh_t int1_tsh_yh;
   a3g4250d_int1_tsh_yl_t int1_tsh_yl;
@@ -1553,7 +1553,7 @@ int32_t a3g4250d_int_y_treshold_get(const stmdev_ctx_t *ctx, uint16_t *val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t a3g4250d_int_z_treshold_set(const stmdev_ctx_t *ctx, uint16_t val)
+int32_t a3g4250d_int_z_threshold_set(const stmdev_ctx_t *ctx, uint16_t val)
 {
   a3g4250d_int1_tsh_zh_t int1_tsh_zh;
   a3g4250d_int1_tsh_zl_t int1_tsh_zl;
@@ -1593,7 +1593,7 @@ int32_t a3g4250d_int_z_treshold_set(const stmdev_ctx_t *ctx, uint16_t val)
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t a3g4250d_int_z_treshold_get(const stmdev_ctx_t *ctx, uint16_t *val)
+int32_t a3g4250d_int_z_threshold_get(const stmdev_ctx_t *ctx, uint16_t *val)
 {
   a3g4250d_int1_tsh_zh_t int1_tsh_zh;
   a3g4250d_int1_tsh_zl_t int1_tsh_zl;
