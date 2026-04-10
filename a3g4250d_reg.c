@@ -134,7 +134,7 @@ int32_t a3g4250d_data_rate_set(const stmdev_ctx_t *ctx, a3g4250d_dr_t val)
 
   if (ret == 0)
   {
-    ctrl_reg1.dr = ((uint8_t)val & 0x30U) >> 4;
+    ctrl_reg1.dr = ((uint8_t)val >> 4) & 0x03U;
     ctrl_reg1.pd = ((uint8_t)val & 0x0FU);
     ret = a3g4250d_write_reg(ctx, A3G4250D_CTRL_REG1,
                              (uint8_t *)&ctrl_reg1, 1);
@@ -332,7 +332,7 @@ int32_t a3g4250d_self_test_set(const stmdev_ctx_t *ctx, a3g4250d_st_t val)
 
   if (ret == 0)
   {
-    ctrl_reg4.st = (uint8_t)((uint8_t)val & 0x03u);
+    ctrl_reg4.st = (uint8_t)val & 0x03U;
     ret = a3g4250d_write_reg(ctx, A3G4250D_CTRL_REG4,
                              (uint8_t *)&ctrl_reg4, 1);
   }
@@ -397,7 +397,7 @@ int32_t a3g4250d_data_format_set(const stmdev_ctx_t *ctx, a3g4250d_ble_t val)
 
   if (ret == 0)
   {
-    ctrl_reg4.ble = (uint8_t)((uint8_t)val & 0x01);
+    ctrl_reg4.ble = (uint8_t)val & 0x01U;
     ret = a3g4250d_write_reg(ctx, A3G4250D_CTRL_REG4,
                              (uint8_t *)&ctrl_reg4, 1);
   }
@@ -458,7 +458,7 @@ int32_t a3g4250d_boot_set(const stmdev_ctx_t *ctx, uint8_t val)
 
   if (ret == 0)
   {
-    ctrl_reg5.boot = (uint8_t)((uint8_t)val & 0x01);
+    ctrl_reg5.boot = (uint8_t)val & 0x01U;
     ret = a3g4250d_write_reg(ctx, A3G4250D_CTRL_REG5,
                              (uint8_t *)&ctrl_reg5, 1);
   }
@@ -519,7 +519,7 @@ int32_t a3g4250d_lp_bandwidth_set(const stmdev_ctx_t *ctx, a3g4250d_bw_t val)
 
   if (ret == 0)
   {
-    ctrl_reg1.bw = (uint8_t)((uint8_t)val & 0x03);
+    ctrl_reg1.bw = (uint8_t)val & 0x03U;
     ret = a3g4250d_write_reg(ctx, A3G4250D_CTRL_REG1,
                              (uint8_t *)&ctrl_reg1, 1);
   }
@@ -681,7 +681,7 @@ int32_t a3g4250d_hp_mode_set(const stmdev_ctx_t *ctx, a3g4250d_hpm_t val)
 
   if (ret == 0)
   {
-    ctrl_reg2.hpm = (uint8_t)((uint8_t)val & 0x03);
+    ctrl_reg2.hpm = (uint8_t)val & 0x03U;
     ret = a3g4250d_write_reg(ctx, A3G4250D_CTRL_REG2,
                              (uint8_t *)&ctrl_reg2, 1);
   }
@@ -751,7 +751,7 @@ int32_t a3g4250d_filter_path_set(const stmdev_ctx_t *ctx, a3g4250d_out_sel_t val
   if (ret == 0)
   {
     ctrl_reg5.out_sel = (uint8_t)val & 0x03U;
-    ctrl_reg5.hpen = ((uint8_t)val & 0x04U) >> 2;
+    ctrl_reg5.hpen = ((uint8_t)val >> 2) & 0x01U;
     ret = a3g4250d_write_reg(ctx, A3G4250D_CTRL_REG5,
                              (uint8_t *)&ctrl_reg5, 1);
   }
@@ -822,7 +822,7 @@ int32_t a3g4250d_filter_path_internal_set(const stmdev_ctx_t *ctx,
   if (ret == 0)
   {
     ctrl_reg5.int1_sel = (uint8_t)val & 0x03U;
-    ctrl_reg5.hpen = ((uint8_t)val & 0x04U) >> 2;
+    ctrl_reg5.hpen = ((uint8_t)val >> 2) & 0x01U;
     ret = a3g4250d_write_reg(ctx, A3G4250D_CTRL_REG5,
                              (uint8_t *)&ctrl_reg5, 1);
   }
@@ -954,7 +954,7 @@ int32_t a3g4250d_spi_mode_set(const stmdev_ctx_t *ctx, a3g4250d_sim_t val)
 
   if (ret == 0)
   {
-    ctrl_reg4.sim = (uint8_t)((uint8_t)val & 0x01);
+    ctrl_reg4.sim = (uint8_t)val & 0x01U;
     ret = a3g4250d_write_reg(ctx, A3G4250D_CTRL_REG4,
                              (uint8_t *)&ctrl_reg4, 1);
   }
@@ -1137,7 +1137,7 @@ int32_t a3g4250d_pin_mode_set(const stmdev_ctx_t *ctx, a3g4250d_pp_od_t val)
 
   if (ret == 0)
   {
-    ctrl_reg3.pp_od = (uint8_t)((uint8_t)val & 0x01);
+    ctrl_reg3.pp_od = (uint8_t)val & 0x01U;
     ret = a3g4250d_write_reg(ctx, A3G4250D_CTRL_REG3,
                              (uint8_t *)&ctrl_reg3, 1);
   }
@@ -1200,7 +1200,7 @@ int32_t a3g4250d_pin_polarity_set(const stmdev_ctx_t *ctx,
 
   if (ret == 0)
   {
-    ctrl_reg3.h_lactive = (uint8_t)((uint8_t)val & 0x01);
+    ctrl_reg3.h_lactive = (uint8_t)val & 0x01U;
     ret = a3g4250d_write_reg(ctx, A3G4250D_CTRL_REG3,
                              (uint8_t *)&ctrl_reg3, 1);
   }
@@ -1261,7 +1261,7 @@ int32_t a3g4250d_int_notification_set(const stmdev_ctx_t *ctx, a3g4250d_lir_t va
 
   if (ret == 0)
   {
-    int1_cfg.lir = (uint8_t)((uint8_t)val & 0x01);
+    int1_cfg.lir = (uint8_t)val & 0x01U;
     ret = a3g4250d_write_reg(ctx, A3G4250D_INT1_CFG, (uint8_t *)&int1_cfg, 1);
   }
 
@@ -1368,7 +1368,7 @@ int32_t a3g4250d_int_on_threshold_mode_set(const stmdev_ctx_t *ctx,
 
   if (ret == 0)
   {
-    int1_cfg.and_or = (uint8_t)((uint8_t)val & 0x01);
+    int1_cfg.and_or = (uint8_t)val & 0x01U;
     ret = a3g4250d_write_reg(ctx, A3G4250D_INT1_CFG, (uint8_t *)&int1_cfg, 1);
   }
 
@@ -1730,7 +1730,7 @@ int32_t a3g4250d_fifo_enable_set(const stmdev_ctx_t *ctx, uint8_t val)
 
   if (ret == 0)
   {
-    ctrl_reg5.fifo_en = (uint8_t)((uint8_t)val & 0x01);
+    ctrl_reg5.fifo_en = (uint8_t)val & 0x01U;
     ret = a3g4250d_write_reg(ctx, A3G4250D_CTRL_REG5,
                              (uint8_t *)&ctrl_reg5, 1);
   }
@@ -1827,7 +1827,7 @@ int32_t a3g4250d_fifo_mode_set(const stmdev_ctx_t *ctx,
 
   if (ret == 0)
   {
-    fifo_ctrl_reg.fm = (uint8_t)((uint8_t)val & 0x07);
+    fifo_ctrl_reg.fm = (uint8_t)val & 0x07U;
     ret = a3g4250d_write_reg(ctx, A3G4250D_FIFO_CTRL_REG,
                              (uint8_t *)&fifo_ctrl_reg, 1);
   }
